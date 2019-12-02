@@ -19,11 +19,18 @@
   padding: 0; }
 
 .scale:hover {
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -o-transform: scale(1.05);
   transform: scale(1.05); }
 
 .animate {
+  -o-transition: .3s;
+  -moz-transition: .3s;
   transition: .3s; }
   .animate:hover {
+    -o-transition: .3s;
+    -moz-transition: .3s;
     transition: .3s; }
 
 .visualizer-block {
@@ -82,6 +89,8 @@
   background: #f1f1f1; }
 
 .window-block {
+  display: -moz-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   position: relative;
   min-width: 100%;
@@ -107,7 +116,12 @@
       width: 40px;
       background-size: contain !important; } }
   .window-type:hover, .window-color:hover, .bg-color:hover {
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -o-transform: scale(1.05);
     transform: scale(1.05);
+    -o-transition: .3s;
+    -moz-transition: .3s;
     transition: .3s; }
 
 .window-color {
