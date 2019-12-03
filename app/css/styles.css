@@ -33,43 +33,63 @@
     -moz-transition: .3s;
     transition: .3s; }
 
-.visualizer-block {
+.visualizer-window #bg-background-window {
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  mix-blend-mode: multiply; }
+
+.visualizer-window #bg-window {
+  z-index: -1; }
+
+.visualizer-window .visualizer-block {
   margin-bottom: 5px;
   overflow-x: auto; }
-  .visualizer-block .title {
+  .visualizer-window .visualizer-block .title {
     margin-bottom: 5px; }
-  .visualizer-block .title-name {
+  .visualizer-window .visualizer-block .title-name {
     font-size: 12px; }
 
-.bg {
+.visualizer-window .bg {
   min-height: 100%;
   border: 3px solid #ccc; }
-  .bg img {
+  .visualizer-window .bg img {
     width: 100%;
     height: auto; }
 
-.window-title.title-1 {
-  top: 45%; }
+.visualizer-window .window-title {
+  font-weight: bold;
+  display: block;
+  background: #fff;
+  padding: 0 10px 2px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content; }
+  .visualizer-window .window-title.title-1 {
+    top: 46%; }
+  .visualizer-window .window-title.title-2 {
+    top: 93%; }
 
-.window-title.title-2 {
-  top: 92%; }
-
-#svg {
+.visualizer-window #svg {
   position: absolute;
   z-index: 2;
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: 50%;
   mix-blend-mode: multiply; }
-  #svg .svg-window-01, #svg .svg-window-02, #svg .svg-window-03 {
+  .visualizer-window #svg .svg-window-01, .visualizer-window #svg .svg-window-02, .visualizer-window #svg .svg-window-03 {
     fill: #ffffff; }
-  #svg .svg-window-01, #svg .svg-window-03 {
+  .visualizer-window #svg .svg-window-01, .visualizer-window #svg .svg-window-03 {
     display: none; }
 
-.window-02 {
+.visualizer-window .window-02 {
   display: block; }
 
-.jscolor {
+.visualizer-window .jscolor {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -81,14 +101,13 @@
   font-size: 10px;
   text-align: center; }
 
-#bg {
+.visualizer-window #bg {
   width: 100%;
   height: 100%;
   bottom: 0;
-  z-index: -1;
-  background: #f1f1f1; }
+  z-index: -1; }
 
-.window-block {
+.visualizer-window .window-block {
   display: -moz-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -100,22 +119,22 @@
   padding: 5px;
   overflow-x: auto; }
   @media screen and (min-width: 576px) and (max-width: 767px) {
-    .window-block div {
+    .visualizer-window .window-block div {
       height: 40px;
       width: 40px; } }
 
-.window-type, .window-color, .bg-color {
+.visualizer-window .window-type, .visualizer-window .window-color, .visualizer-window .bg-color {
   height: 50px;
   width: 50px;
   cursor: pointer;
   margin-right: 5px;
   border: 1px solid #999; }
   @media screen and (min-width: 576px) and (max-width: 767px) {
-    .window-type, .window-color, .bg-color {
+    .visualizer-window .window-type, .visualizer-window .window-color, .visualizer-window .bg-color {
       height: 40px;
       width: 40px;
       background-size: contain !important; } }
-  .window-type:hover, .window-color:hover, .bg-color:hover {
+  .visualizer-window .window-type:hover, .visualizer-window .window-color:hover, .visualizer-window .bg-color:hover {
     -moz-transform: scale(1.05);
     -ms-transform: scale(1.05);
     -o-transform: scale(1.05);
@@ -124,7 +143,7 @@
     -moz-transition: .3s;
     transition: .3s; }
 
-.window-color {
+.visualizer-window .window-color {
   overflow: hidden;
   background-size: contain !important; }
 

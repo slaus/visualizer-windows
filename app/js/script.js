@@ -3,18 +3,26 @@
 "use strict";
 // Reference the color shape that was drawn over the image
 const path = "images/";
-const bg = document.getElementById("bg");
+const bgWindow = document.getElementById("bg-background-window");
 const svg = document.getElementById("svg");
 const svgWindow = document.getElementsByClassName("svg-window");
 
 // Background color
+var bgWindowColor = document.getElementsByClassName("bg-color");
+for (var bwc = 0; bwc < bgWindowColor.length; bwc++) {
+    bgWindowColor[bwc].onclick = changeBgColor;
+}
 function changeBgColor(e) {
-    document.getElementById("bg-picker").style.backgroundColor = "#ffffff";
-    document.getElementById("bg-picker").value = "FFFFFF";
-    bg.style.backgroundColor = "transparent";
+    document.getElementById("window-picker").style.backgroundColor = "#ffffff";
+    document.getElementById("window-picker").value = "FFFFFF";
+    bgWindow.style.backgroundColor = "transparent";
+    let bgc = this.getAttribute("data-bg");
+    console.log(bgc);
+    document.getElementById("bg-window").src = path + "wall/big/" + (bgc == null ? "wall-06" : bgc) + ".jpg";
 }
 function changeBgCustomColor(picker) {
-    bg.style.backgroundColor = picker.toHEXString();
+    document.getElementById("bg-window").src = path + "wall/big/wall-06.jpg";
+    bgWindow.style.backgroundColor = picker.toHEXString();
 }
 
 //Window type
@@ -46,10 +54,10 @@ function changeWindowColor(e) {
     let hex = e.target.getAttribute("data-hex");
     let url = e.target.getAttribute("data-url");
     let title = e.target.getAttribute("data-title");
-    document.getElementById("color").innerHTML = title;
+    document.getElementById("window-color").innerHTML = title;
 
     for (var wc = 0; wc < svgWindow.length; wc++) {
-        svgWindow[wc].style.fill = "url(#color-" + url +")";
+        svgWindow[wc].style.fill = "url(#window-color-" + url +")";
     }
 }
 
